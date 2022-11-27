@@ -1,0 +1,6 @@
+# Ignore ALL .log files
+.log
+
+#Ignore config files
+requirements.txt
+merchex/db.sqlite3
