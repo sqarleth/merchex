@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends 'listings/base.html' %}
 
-</body>
-</html>
+{% block content %}
+
+<!-- band object is defined in views.py -->
+<h2>{{ band.name }}</h2>
+
+<ul>
+    <!-- use get_genre_display to show readable genre -->
+    <li>Genre : {{ band.get_genre_display }}</li>
+    <li>Année de création : {{ band.year_formed }}</li>
+    <!-- use filter yesno to replace True False -->
+    <li>Est actif : {{ band.active|yesno }}</li>
+    {% if band.official_homepage %}
+    <!-- add a hyperlink if website exist -->
+    <li>Website : <a href="{{ band.official_homepage }}">{{ band.official_homepage }}</a></li>
+    {% endif %}
+</ul>
+
+<p>{{ band.biography }}</p>
+
+<!-- Argument in url is name defined in urls.py -->
+<a href="{% url 'band-list' %}">Retour à tous les groupes</a>
+
+{% endblock %}

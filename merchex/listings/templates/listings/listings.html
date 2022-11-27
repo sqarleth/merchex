@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'listings/base.html' %}
 
-</body>
-</html>
+{% block content %}
+
+<h1>Liste des annonces</h1>
+<p>Retrouver les prochaines annonces ici :</p>
+<ul>
+    {% for list in lists %}
+    <li>{{ list.title}}</li>
+    {% endfor %}
+</ul>
+<p>J'ai {{ lists|length }} annonces en base </p>
+
+{% endblock %}

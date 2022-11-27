@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1>Nous contacter</h1>
+<p>Et si on gardait contact ?</p>
+
+<form action="" method="post" novalidate>
+{% csrf_token %}
+    <!-- Add as_p for list view -->
+    {{ form.as_p }}
+    <input type="submit" value="Envoyer">
+</form>
+
+{% endblock %}

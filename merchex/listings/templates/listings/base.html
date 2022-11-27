@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Merchex</title>
+    <link rel="stylesheet" href="{% static 'listings/styles.css' %}" />
 </head>
 <body>
-$END$
+
+<!-- Add navigation bar-->
+<nav>
+    <a href="{% url 'band-list' %}">Groupes</a>
+</nav>
+
+  {% block content %}{% endblock %}
 </body>
 </html>

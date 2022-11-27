@@ -7,7 +7,7 @@
 <!-- Lister les groupes -->
 <p>Mes groupes préférés sont :</p>
 <ul>{% for band in bands %}
-    <li>{{ band.name }}</li>
+    <li><a href="{% url 'band-detail' band.id %}">{{ band.name }}</a></li>
     {% endfor %}
 </ul>
 
